@@ -1,0 +1,74 @@
+<section class="view">
+  <header class="hero">
+    <div>
+      <p class="hero-eyebrow">PROYECTO FORMATIVO · ANALISIS Y DESARROLLO DE SOFTWARE</p>
+      <h2>Sistema de Control de <span>Producción Cinematográfica</span></h2>
+      <p class="hero-sub">
+        Plataforma integral para supervisar cada etapa de un proyecto audiovisual: desde la
+        preproducción hasta la distribución, con transparencia, alertas y toma de decisiones en tiempo real.
+      </p>
+    </div>
+    <div class="hero-date" id="today-date"></div>
+  </header>
+
+  <div id="kpi-grid" class="kpi-grid"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="card-title">Producciones por estado</h3>
+      <div id="chart-producciones-estado" class="bar-chart"></div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Plan de rodaje por estado</h3>
+      <div class="donut-wrap">
+        <div id="donut-planes" class="donut"></div>
+        <div id="donut-planes-legend" class="legend"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="card-title">Alertas por tipo</h3>
+      <div id="chart-alertas" class="bar-chart"></div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Escenas por ambiente</h3>
+      <div id="chart-ambiente" class="bar-chart"></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="card-title">Próximos rodajes programados</h3>
+      <div id="proximos-rodajes" class="list-block"></div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">&#9888; Riesgo presupuestario (costo locaciones &gt; 80% del presupuesto)</h3>
+      <div id="riesgo-presupuesto" class="list-block"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h3 class="card-title">Resumen de producciones</h3>
+      <button class="btn btn-outline" data-goto="producciones">Ver módulo &#8594;</button>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Producción</th>
+            <th>Estado</th>
+            <th>Presupuesto</th>
+            <th>Costo locaciones</th>
+            <th>Escenas</th>
+            <th>Alertas</th>
+            <th>Periodo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-resumen"></tbody>
+      </table>
+    </div>
+  </div>
+</section>

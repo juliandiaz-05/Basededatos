@@ -1,0 +1,33 @@
+<section class="view">
+  <header class="view-head">
+    <div>
+      <h2>Escenas</h2>
+      <p>Escenas de cada producción con su ambiente, locación y clima requerido.</p>
+    </div>
+    <button class="btn btn-primary" data-new="escenas">+ Nueva escena</button>
+  </header>
+  <div class="card">
+    <div class="toolbar">
+      <label>Filtrar por producción:
+        <select id="filtro-escenas"><option value="">Todas</option></select>
+      </label>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Producción</th>
+            <th>N° Escena</th>
+            <th>Descripción</th>
+            <th>Locación</th>
+            <th>Ambiente</th>
+            <th>Clima requerido</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-escenas"></tbody>
+      </table>
+    </div>
+  </div>
+</section>

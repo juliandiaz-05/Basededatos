@@ -1,0 +1,24 @@
+/* ============================================================
+   VARIABLES GLOBALES DEL TEMA
+   Tema: cine oscuro negro con acentos naranja
+   ============================================================ */
+
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #131313;
+  --card: #1a1a1a;
+  --card-2: #222222;
+  --border: #2e2e2e;
+  --text: #f4eee6;
+  --text-dim: #a6a096;
+  --orange: #ff7a00;
+  --orange-2: #d95f00;
+  --green: #3ddc97;
+  --red: #ff5f56;
+  --blue: #ff9a3d;
+  --yellow: #ffc266;
+  --purple: #ff7d5c;
+  --sidebar-w: 252px;
+  --radius: 14px;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}

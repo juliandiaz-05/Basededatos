@@ -1,0 +1,346 @@
+/* ============================================================
+   COMPONENTES: tarjetas, KPIs, badges, botones y listas
+   ============================================================ */
+
+/* ---- Tarjetas ---- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  border-top: 2px solid var(--orange);
+}
+
+.card-title {
+  font-size: 16px;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* ---- KPIs ---- */
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+}
+
+.kpi .kpi-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.kpi .kpi-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.kpi .kpi-sub {
+  font-size: 11px;
+  color: var(--orange);
+  margin-top: 6px;
+}
+
+.kpi.green::after {
+  background: var(--green);
+}
+
+.kpi.blue::after {
+  background: var(--blue);
+}
+
+.kpi.red::after {
+  background: var(--red);
+}
+
+.kpi.purple::after {
+  background: var(--purple);
+}
+
+/* ---- Badges de estado ---- */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.badge.prep {
+  background: rgba(255, 154, 61, 0.16);
+  color: var(--blue);
+}
+
+.badge.rodaje {
+  background: rgba(255, 122, 0, 0.16);
+  color: var(--orange);
+}
+
+.badge.post {
+  background: rgba(255, 125, 92, 0.16);
+  color: var(--purple);
+}
+
+.badge.dist {
+  background: rgba(61, 220, 151, 0.16);
+  color: var(--green);
+}
+
+.badge.comple {
+  background: rgba(154, 160, 181, 0.15);
+  color: var(--text-dim);
+}
+
+.badge.prog {
+  background: rgba(255, 154, 61, 0.16);
+  color: var(--blue);
+}
+
+.badge.cancel {
+  background: rgba(255, 95, 86, 0.16);
+  color: var(--red);
+}
+
+.badge.repro {
+  background: rgba(255, 194, 102, 0.16);
+  color: var(--yellow);
+}
+
+/* ---- Botones ---- */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--orange-2));
+  color: #0d0d0d;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  color: var(--text);
+  border-color: var(--orange);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+}
+
+.btn-danger {
+  background: rgba(255, 95, 86, 0.14);
+  color: var(--red);
+}
+
+.btn-danger:hover {
+  background: rgba(255, 95, 86, 0.25);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-icon:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.btn-icon.danger:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.toolbar {
+  margin-bottom: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar label {
+  font-size: 13px;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Listas (alertas, próximos rodajes, riesgos) ---- */
+.list-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.list-row {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.list-row .date {
+  color: var(--orange);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.list-row .title {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.list-row .sub {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* ---- Documentación: listas, tarjetas, notas y glosario ---- */
+.checks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.checks li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.checks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.cards-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.mini-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.mini-card h4 {
+  color: var(--orange);
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.mini-card p {
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.note {
+  background: rgba(255, 122, 0, 0.08);
+  border: 1px solid rgba(255, 122, 0, 0.28);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px !important;
+  color: var(--text) !important;
+  margin-top: 14px !important;
+}
+
+.glossary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-top: 8px;
+}
+
+.glossary div {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.glossary strong {
+  color: var(--orange);
+}

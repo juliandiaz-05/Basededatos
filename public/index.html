@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Control de Producción Cinematográfica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos dividida por sección -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/charts.css" />
+  <link rel="stylesheet" href="css/tables.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===================== BARRA LATERAL ===================== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">&#127916;</div>
+      <div>
+        <h1>CineControl</h1>
+        <span>Producción Cinematográfica</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-view="dashboard">&#128200; Panel de Control</button>
+      <button class="nav-item" data-view="doc">&#128214; Documentación</button>
+      <div class="nav-group">Módulos de gestión</div>
+      <button class="nav-item" data-view="producciones">&#127917; Producciones</button>
+      <button class="nav-item" data-view="personal">&#128100; Personal</button>
+      <button class="nav-item" data-view="locaciones">&#127963; Locaciones</button>
+      <button class="nav-item" data-view="escenas">&#127915; Escenas</button>
+      <button class="nav-item" data-view="plan">&#128197; Plan de Rodaje</button>
+      <button class="nav-item" data-view="alertas">&#9888; Alertas</button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <span class="db-badge" id="db-badge">&#128190; Verificando BD...</span>
+      <small>Proyecto 9 · SENA ADS</small>
+    </div>
+  </aside>
+
+  <!-- ===================== CONTENIDO ===================== -->
+  <main class="main">
+    <div id="page-container"><!-- Las páginas se cargan desde pages/ --></div>
+  </main>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <div class="modal-foot" id="modal-foot"></div>
+    </div>
+  </div>
+
+  <!-- ===================== TOASTS ===================== -->
+  <div id="toast-container"></div>
+
+  <!-- JavaScript dividido por módulo -->
+  <script type="module" src="js/api.js"></script>
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/ui.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+  <script type="module" src="js/documentacion.js"></script>
+  <script type="module" src="js/producciones.js"></script>
+  <script type="module" src="js/personal.js"></script>
+  <script type="module" src="js/locaciones.js"></script>
+  <script type="module" src="js/escenas.js"></script>
+  <script type="module" src="js/planRodaje.js"></script>
+  <script type="module" src="js/alertas.js"></script>
+  <script type="module" src="js/router.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

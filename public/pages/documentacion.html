@@ -1,0 +1,225 @@
+<section class="view">
+  <header class="view-head">
+    <h2>Documentación del Proyecto</h2>
+    <p>Justificación, objetivos, análisis del problema, requisitos y modelado del sistema.</p>
+  </header>
+
+  <div class="tabs" id="doc-tabs">
+    <button class="tab active" data-tab="intro">Introducción</button>
+    <button class="tab" data-tab="objetivos">Objetivos</button>
+    <button class="tab" data-tab="justificacion">Justificación</button>
+    <button class="tab" data-tab="problema">Análisis del problema</button>
+    <button class="tab" data-tab="funcionales">Requisitos funcionales</button>
+    <button class="tab" data-tab="nofuncionales">Requisitos no funcionales</button>
+    <button class="tab" data-tab="actores">Actores</button>
+    <button class="tab" data-tab="casos">Casos de uso</button>
+    <button class="tab" data-tab="datos">Modelo de datos</button>
+    <button class="tab" data-tab="glosario">Glosario</button>
+  </div>
+
+  <!-- Introducción -->
+  <div class="tab-pane active" id="pane-intro">
+    <h3>Introducción</h3>
+    <p>
+      La industria cinematográfica es un universo en el que convergen creatividad, técnica, logística y
+      economía. Cada película es el resultado de un proceso complejo que involucra cientos de personas,
+      recursos materiales y decisiones estratégicas que deben coordinarse con precisión. El presente
+      proyecto propone un <strong>Sistema de Control de Producción Cinematográfica</strong>, concebido como
+      una plataforma integral capaz de supervisar todas las etapas de un proyecto audiovisual, desde la
+      preproducción hasta la distribución, con un nivel de detalle que garantice calidad, eficiencia y
+      transparencia.
+    </p>
+    <p>
+      La magnitud del proyecto se refleja en la diversidad de elementos que deben gestionarse de manera
+      simultánea: guiones, cronogramas, presupuestos, locaciones, actores, técnicos, equipos de filmación
+      y procesos de postproducción. La plataforma consolida toda esta información en tiempo real, para que
+      productores, directores y equipos técnicos accedan de inmediato a los datos necesarios para tomar
+      decisiones críticas.
+    </p>
+  </div>
+
+  <!-- Objetivos -->
+  <div class="tab-pane" id="pane-objetivos">
+    <h3>Objetivos</h3>
+    <h4>Objetivo general</h4>
+    <p>
+      Diseñar e implementar un sistema de información web que permita controlar la producción
+      cinematográfica, integrando la gestión de producciones, personal, locaciones, escenas, cronogramas
+      de rodaje y alertas sobre una base de datos MySQL, garantizando trazabilidad y transparencia en la
+      asignación de recursos.
+    </p>
+    <h4>Objetivos específicos</h4>
+    <ul class="checks">
+      <li>Modelar la base de datos relacional del sistema con claves primarias, foráneas e integridad referencial.</li>
+      <li>Desarrollar una interfaz web interactiva y de fácil uso para los distintos actores del proceso.</li>
+      <li>Permitir el registro, consulta, actualización y eliminación de producciones, personal, locaciones, escenas, planes de rodaje y alertas (CRUD).</li>
+      <li>Implementar reglas de negocio: cancelación y reprogramación de rodajes por clima adverso, con generación automática de alertas.</li>
+      <li>Generar reportes y estadísticas (panel de control) que permitan detectar desviaciones presupuestarias y del cronograma.</li>
+      <li>Garantizar seguridad, respaldo y rendimiento de la información mediante buenas prácticas y requisitos no funcionales.</li>
+    </ul>
+  </div>
+
+  <!-- Justificación -->
+  <div class="tab-pane" id="pane-justificacion">
+    <h3>Justificación</h3>
+    <p>
+      Actualmente las producciones cinematográficas se gestionan con hojas de cálculo y documentos
+      dispersos, lo que genera pérdida de información, errores humanos, retrasos en el cronograma y
+      sobrecostos difíciles de detectar a tiempo. La inexistencia de una fuente única y confiable de datos
+      impide anticipar problemas como condiciones climáticas adversas o desviaciones del presupuesto.
+    </p>
+    <p>
+      El sistema se justifica porque: <strong>(1)</strong> centraliza la información de todas las áreas de una
+      producción en tiempo real; <strong>(2)</strong> automatiza reglas de negocio críticas como la cancelación de
+      rodajes por clima y las alertas presupuestarias; <strong>(3)</strong> facilita la interoperabilidad entre
+      productores, directores, técnicos y autoridades culturales; <strong>(4)</strong> garantiza la transparencia en
+      la asignación de recursos; y <strong>(5)</strong> es escalable para gestionar múltiples producciones de manera
+      simultánea, incluso en contextos de coproducción internacional.
+    </p>
+  </div>
+
+  <!-- Análisis del problema -->
+  <div class="tab-pane" id="pane-problema">
+    <h3>Análisis del problema</h3>
+    <h4>Contexto y antecedentes</h4>
+    <p>
+      En la industria del cine convergen múltiples actores con necesidades específicas: los productores
+      supervisan cronogramas y presupuestos; los directores coordinan escenas y locaciones; los técnicos
+      registran procesos de filmación; y las autoridades culturales verifican el cumplimiento de normativas.
+      La gestión se realiza en su mayoría con herramientas genéricas que no reflejan las particularidades
+      de un rodaje.
+    </p>
+    <h4>Descripción del problema</h4>
+    <ul class="checks">
+      <li><strong>Desinformación:</strong> no existe una vista consolidada del estado real de cada producción.</li>
+      <li><strong>Desviaciones tardías:</strong> el sobrecosto del presupuesto se detecta cuando ya es difícil corregirlo.</li>
+      <li><strong>Impacto del clima:</strong> una escena cancelada por clima afecta el cronograma sin que el sistema sugiera alternativas.</li>
+      <li><strong>Falta de trazabilidad:</strong> las decisiones no quedan registradas ni justificadas para auditorías.</li>
+      <li><strong>Datos sensibles:</strong> la información es valiosa y su manipulación indebida afecta la reputación de las empresas.</li>
+      <li><strong>Dificultad de escalar:</strong> los métodos manuales no soportan miles de registros ni múltiples producciones simultáneas.</li>
+    </ul>
+    <h4>Solución propuesta</h4>
+    <p>
+      Una aplicación web conectada a una base de datos MySQL que unifica la información, automatiza alertas,
+      genera reportes, protege los datos y escala según la demanda, respetando además la dimensión artística
+      y creativa del cine.
+    </p>
+  </div>
+
+  <!-- Requisitos funcionales -->
+  <div class="tab-pane" id="pane-funcionales">
+    <h3>Requisitos funcionales</h3>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th>Código</th><th>Requisito</th><th>Módulo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>RF-01</td><td>Registrar, consultar, modificar y eliminar producciones con su presupuesto y fechas.</td><td>Producciones</td></tr>
+          <tr><td>RF-02</td><td>Gestionar el personal (directores, productores, técnicos y actores) con su rol y país de origen.</td><td>Personal</td></tr>
+          <tr><td>RF-03</td><td>Registrar locaciones con su país y costo diario.</td><td>Locaciones</td></tr>
+          <tr><td>RF-04</td><td>Crear escenas asociadas a una producción y locación, con ambiente y clima requerido.</td><td>Escenas</td></tr>
+          <tr><td>RF-05</td><td>Programar el rodaje de escenas en fechas específicas y cambiar su estado.</td><td>Plan de Rodaje</td></tr>
+          <tr><td>RF-06</td><td>Cancelar un rodaje por clima adverso y generar alerta automática.</td><td>Plan de Rodaje</td></tr>
+          <tr><td>RF-07</td><td>Reprogramar un rodaje a una nueva fecha y registrar la decisión.</td><td>Plan de Rodaje</td></tr>
+          <tr><td>RF-08</td><td>Gestionar alertas de tipo clima, presupuesto, reprogramación y plan de rodaje.</td><td>Alertas</td></tr>
+          <tr><td>RF-09</td><td>Mostrar indicadores: producciones activas, presupuesto total, próximos rodajes y riesgos presupuestarios.</td><td>Panel de Control</td></tr>
+          <tr><td>RF-10</td><td>Impedir el borrado de una escena que tenga un plan de rodaje vinculado (integridad).</td><td>Escenas</td></tr>
+          <tr><td>RF-11</td><td>Filtrar escenas por producción para agilizar su búsqueda.</td><td>Escenas</td></tr>
+          <tr><td>RF-12</td><td>Documentar el sistema con manuales técnico y de usuario.</td><td>Documentación</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Requisitos no funcionales -->
+  <div class="tab-pane" id="pane-nofuncionales">
+    <h3>Requisitos no funcionales</h3>
+    <div class="cards-mini">
+      <div class="mini-card"><h4>&#128272; Seguridad</h4><p>Acceso autenticado, protección contra accesos no autorizados, manipulación indebida o pérdida accidental; confidencialidad e integridad de los datos.</p></div>
+      <div class="mini-card"><h4>&#9889; Rendimiento</h4><p>Respuesta ágil de la interfaz y consultas optimizadas con índices, capaz de gestionar miles de registros por producción.</p></div>
+      <div class="mini-card"><h4>&#128506; Disponibilidad</h4><p>Servidor disponible en la red local; mecanismos de respaldo (backup) y recuperación de la base de datos.</p></div>
+      <div class="mini-card"><h4>&#128737; Escalabilidad</h4><p>Gestión simultánea de múltiples producciones y crecimiento sin perder rendimiento ni disponibilidad.</p></div>
+      <div class="mini-card"><h4>&#128101; Usabilidad</h4><p>Interfaz clara y accesible para usuarios con distintos niveles de alfabetización digital.</p></div>
+      <div class="mini-card"><h4>&#128279; Interoperabilidad</h4><p>API REST que permite la integración con otros sistemas y protocolos heterogéneos del sector.</p></div>
+      <div class="mini-card"><h4>&#127757; Cumplimiento normativo</h4><p>Adaptación a normativas internacionales de protección de datos y requisitos de organismos culturales.</p></div>
+      <div class="mini-card"><h4>&#128221; Mantenibilidad</h4><p>Código organizado y documentado para facilitar su evolución y auditoría.</p></div>
+    </div>
+  </div>
+
+  <!-- Actores -->
+  <div class="tab-pane" id="pane-actores">
+    <h3>Actores del sistema</h3>
+    <div class="cards-mini">
+      <div class="mini-card"><h4>&#127916; Productores</h4><p>Supervisan cronogramas y presupuestos, aprueban decisiones y verifican la asignación de recursos.</p></div>
+      <div class="mini-card"><h4>&#127919; Directores</h4><p>Coordinan escenas y locaciones, dirigen al equipo y toman decisiones creativas y logísticas.</p></div>
+      <div class="mini-card"><h4>&#128295; Técnicos</h4><p>Registran procesos de filmación, resultados de pruebas y soporte de equipos de sonido, cámara y edición.</p></div>
+      <div class="mini-card"><h4>&#127973; Autoridades culturales</h4><p>Verifican el cumplimiento de normativas, estándares y requisitos regulatorios de cada país.</p></div>
+      <div class="mini-card"><h4>&#127470; Proveedores y comunidades</h4><p>Dependen de la eficiencia del sistema para garantizar su trabajo y exigir transparencia.</p></div>
+    </div>
+  </div>
+
+  <!-- Casos de uso -->
+  <div class="tab-pane" id="pane-casos">
+    <h3>Casos de uso</h3>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Caso</th><th>Descripción</th><th>Actores</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>CU-01</td><td>Registrar una nueva producción con su presupuesto y fechas.</td><td>Productor</td><td>Producción creada y visible en el sistema.</td></tr>
+          <tr><td>CU-02</td><td>Registrar el personal del proyecto.</td><td>Productor, Director</td><td>Integrante vinculado al equipo.</td></tr>
+          <tr><td>CU-03</td><td>Registrar locaciones y su costo diario.</td><td>Productor, Director</td><td>Locación disponible para escenas.</td></tr>
+          <tr><td>CU-04</td><td>Crear escenas vinculadas a producción y locación.</td><td>Director</td><td>Escena registrada con clima requerido.</td></tr>
+          <tr><td>CU-05</td><td>Programar el rodaje de una escena.</td><td>Productor, Director</td><td>Rodaje agendado en el cronograma.</td></tr>
+          <tr><td>CU-06</td><td>Cancelar rodaje por clima adverso.</td><td>Director, Productor</td><td>Rodaje cancelado y alerta generada.</td></tr>
+          <tr><td>CU-07</td><td>Reprogramar un rodaje.</td><td>Productor</td><td>Nueva fecha asignada y alerta de reprogramación.</td></tr>
+          <tr><td>CU-08</td><td>Consultar reportes y alertas del panel.</td><td>Todos</td><td>Indicadores y desviaciones visibles.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">&#128161; Flujo principal de CU-06: el usuario selecciona el rodaje afectado, indica el motivo (p. ej. nevada intensa), el sistema cambia el estado a <em>Cancelado_Clima</em> y registra una alerta de tipo <em>Clima Adverso</em> sugiriendo la reprogramación.</p>
+  </div>
+
+  <!-- Modelo de datos -->
+  <div class="tab-pane" id="pane-datos">
+    <h3>Modelo de datos (Base de datos <code>control_cinematografico</code>)</h3>
+    <p>
+      El modelo relacional está compuesto por 6 tablas con claves primarias, foráneas e integridad referencial
+      (borrado en cascada de escenas y alertas, y <em>SET NULL</em> en la locación), más una vista de resumen.
+    </p>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Tabla</th><th>Campos</th><th>Relaciones</th></tr></thead>
+        <tbody>
+          <tr><td>Produccion</td><td>id_produccion, titulo, estado, presupuesto_total, fecha_inicio, fecha_fin_estimada</td><td>1:N con Escena y Alerta</td></tr>
+          <tr><td>Personal</td><td>id_personal, nombre, rol, email, telefono, pais_origen</td><td>Equipo de trabajo</td></tr>
+          <tr><td>Locacion</td><td>id_locacion, nombre, direccion, pais, costo_diario</td><td>1:N con Escena (SET NULL)</td></tr>
+          <tr><td>Escena</td><td>id_escena, id_produccion, id_locacion, numero_escena, descripcion, tipo_ambiente, clima_requerido</td><td>N:1 con Produccion y Locacion; 1:N con Plan_Rodaje</td></tr>
+          <tr><td>Plan_Rodaje</td><td>id_plan, id_escena, fecha_rodaje, estado_rodaje</td><td>N:1 con Escena (cascada)</td></tr>
+          <tr><td>Alerta</td><td>id_alerta, id_produccion, tipo, mensaje, fecha_registro</td><td>N:1 con Produccion (cascada)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">&#128161; Se usa <code>ALTER TABLE</code> para adicionar la columna <code>telefono</code> a <code>Personal</code> y un índice <code>idx_tipo_ambiente</code> sobre <code>Escena</code>, y una vista <code>v_resumen_produccion</code> que agrupa indicadores de cada producción.</p>
+  </div>
+
+  <!-- Glosario -->
+  <div class="tab-pane" id="pane-glosario">
+    <h3>Glosario de términos</h3>
+    <div class="glossary">
+      <div><strong>Base de datos:</strong> conjunto organizado de datos estructurados, almacenados electrónicamente.</div>
+      <div><strong>CREATE DATABASE:</strong> comando SQL para crear una nueva base de datos.</div>
+      <div><strong>CREATE TABLE:</strong> comando SQL para crear una nueva tabla.</div>
+      <div><strong>PRIMARY KEY:</strong> columna o conjunto de columnas que identifican de forma única cada fila.</div>
+      <div><strong>FOREIGN KEY:</strong> columna que establece una relación con la clave primaria de otra tabla.</div>
+      <div><strong>AUTO_INCREMENT:</strong> atributo que incrementa automáticamente el valor de una columna numérica.</div>
+      <div><strong>NOT NULL:</strong> restricción que impide valores nulos.</div>
+      <div><strong>DEFAULT:</strong> valor asignado automáticamente si no se proporciona uno.</div>
+      <div><strong>Vista (View):</strong> consulta guardada que actúa como una tabla virtual.</div>
+      <div><strong>Índice (Index):</strong> estructura que mejora la velocidad de búsqueda.</div>
+      <div><strong>Rodaje:</strong> proceso de filmación de las escenas de una producción.</div>
+      <div><strong>Preproducción:</strong> etapa de planeación, casting y preparación de locaciones.</div>
+      <div><strong>Postproducción:</strong> edición, sonido y efectos tras el rodaje.</div>
+    </div>
+  </div>
+</section>
