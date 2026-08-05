@@ -59,10 +59,11 @@ export function openForm(title, formHTML, onSubmit, data = {}) {
     title,
     `<form id="modal-form" class="form-grid">${formHTML}</form>`,
     `<button type="button" class="btn btn-ghost" id="btn-cancel">Cancelar</button>
-     <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>`
+     <button type="button" class="btn btn-primary" id="btn-save">Guardar</button>`
   );
   const form = $("#modal-form");
   $("#btn-cancel").addEventListener("click", closeModal);
+  $("#btn-save").addEventListener("click", () => form.requestSubmit());
 
   Object.entries(data).forEach(([name, value]) => {
     const input = form.elements[name];
